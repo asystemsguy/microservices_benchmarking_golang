@@ -8,10 +8,10 @@ import (
 )
 
 //workload
-var amt_of_data string = "34M"//os.Getenv("amt_of_data")
-var max_prime string = "4000"//os.Getenv("max_prime")
+var amt_of_data string = "3G"//os.Getenv("amt_of_data")
+var max_prime string = "400"//os.Getenv("max_prime")
 var num_threads string = "2"//os.Getenv("num_threads")
-var file_size string = "300K"//os.Getenv("file_size")
+var file_size string = "3K"//os.Getenv("file_size")
 
 //network parameter
 const num_reply_bytes int = 20
@@ -50,7 +50,7 @@ func send_message(comp string){
 func start(w http.ResponseWriter, r *http.Request) {
 
      workload_gen(amt_of_data,max_prime,num_threads,file_size)
-     send_message(talks_to)
+    // send_message(talks_to)
      w.WriteHeader(http.StatusOK)
      w.Write(make([]byte, num_reply_bytes))
 }

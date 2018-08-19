@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: golang-demo-a-c
-        image: khv129/golang_demo_a
+        image: khv129/cpubench
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
